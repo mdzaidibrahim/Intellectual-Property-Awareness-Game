@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An interactive educational game to learn about Intellectual Property Rights including Patents, Trademarks, Copyrights, and Designs.">
+    <title>IPR EduGame - Learn About Trademarks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Intellectual Property Rights Education Game</h1>
+        <p>Learn about Patents, Trademarks, Copyrights, and Designs through interactive activities</p>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero-section" class="hero-section" aria-label="Game selection area">
+            <div id="landing-content" class="landing-content">
+                <h2>What do you love?</h2>
+                <div class="interest-options">
+                    <div class="option-box" data-interest="cars" tabindex="0" role="button" aria-label="Select cars interest">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Luxury car">
+                        <span>Cars</span>
+                    </div>
+                    <div class="option-box" data-interest="digital" tabindex="0" role="button" aria-label="Select digital gadgets interest">
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Smartphone and tablet">
+                        <span>Digital Gadgets</span>
+                    </div>
+                    <div class="option-box" data-interest="films" tabindex="0" role="button" aria-label="Select films interest">
+                        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Movie theater">
+                        <span>Films</span>
+                    </div>
+                </div>
+                <div class="coming-soon">
+                    <p><em>Additional modules coming soon for Digital Gadgets and Films!</em></p>
+                </div>
+            </div>
+
+            <div id="question-content" class="question-content hidden" aria-hidden="true">
+                <div class="image-container">
+                    <img id="question-image" src="" alt="">
+                    <div class="blend-text">What is wrong with this image?</div>
+                </div>
+                <div class="options">
+                    <button class="option-btn" data-answer="wrong" aria-label="Option 1: Image is fine">Image is fine</button>
+                    <button class="option-btn" data-answer="correct" aria-label="Option 2: Car logo and car model is not matching">Car logo and car model is not matching</button>
+                </div>
+                <div id="feedback-text" class="feedback-text hidden" aria-live="polite"></div>
+                <div class="progress-indicator">
+                    <p>Question 1 of 1</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Developed for CIPAM - Intellectual Property Awareness at School Level</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
