@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'game_screen.dart';
 
 class InterestSelectionScreen extends StatelessWidget {
@@ -13,7 +12,7 @@ class InterestSelectionScreen extends StatelessWidget {
         backgroundColor: Colors.blueAccent,
         foregroundColor: Colors.white,
         elevation: 10,
-        shadowColor: Colors.blue.withOpacity(0.5),
+        shadowColor: Colors.blue.withValues(alpha: 0.5),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
@@ -66,28 +65,28 @@ class InterestSelectionScreen extends StatelessWidget {
                   _buildInterestBox(
                     context,
                     'Cars',
-                    'https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
+                    'assets/images/interests/cars.jpg',
                     Colors.redAccent,
                     'cars',
                   ),
                   _buildInterestBox(
                     context,
                     'Digital Gadgets',
-                    'https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
+                    'assets/images/interests/digital_gadgets.jpg',
                     Colors.green,
                     'digital',
                   ),
                   _buildInterestBox(
                     context,
                     'Films',
-                    'https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
+                    'assets/images/interests/films.jpg',
                     Colors.purple,
                     'films',
                   ),
                   _buildInterestBox(
                     context,
                     'Coming Soon',
-                    'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
+                    'assets/images/interests/coming_soon.jpg',
                     Colors.grey,
                     'coming_soon',
                   ),
@@ -147,7 +146,7 @@ class InterestSelectionScreen extends StatelessWidget {
             ),
           ],
           border: Border.all(
-            color: Colors.white.withOpacity(0.3),
+            color: Colors.white.withValues(alpha: 0.3),
             width: 2,
           ),
         ),
@@ -159,10 +158,6 @@ class InterestSelectionScreen extends StatelessWidget {
               width: 100,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                image: DecorationImage(
-                  image: NetworkImage(imageUrl),
-                  fit: BoxFit.cover,
-                ),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withValues(alpha: 0.1),
@@ -171,6 +166,38 @@ class InterestSelectionScreen extends StatelessWidget {
                     offset: const Offset(0, 2),
                   ),
                 ],
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image.asset(
+                  imageUrl,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) {
+                    return Container(
+                      color: Colors.grey[300],
+                      child: const Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.broken_image,
+                              color: Colors.grey,
+                              size: 30,
+                            ),
+                            SizedBox(height: 5),
+                            Text(
+                              'No image',
+                              style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 10,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
             const SizedBox(height: 15),

@@ -36,43 +36,52 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
     super.dispose();
   }
 
-  // Sample questions data for each category
+  // Sample questions data for each category with different feedback for correct/incorrect answers
   Map<String, List<Map<String, dynamic>>> getQuestionsByCategory() {
     return {
       'cars': [
         {
-          'imageUrl': 'https://images.unsplash.com/photo-1570383704809-0329878023d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+          'imageUrl': 'assets/images/questions/car_question.jpg',
           'question': 'What is wrong with this image?',
           'options': [
             'Image is fine',
             'Car logo and car model is not matching'
           ],
           'correctAnswer': 1,
-          'explanation': 'Good job! You identified that the logo doesn\'t match the car. The logo shown is actually a Ferrari logo, but the car body is from a different manufacturer. Trademarks like logos help consumers identify the source of products. Using another company\'s trademark without permission is trademark infringement and can mislead consumers.'
+          'explanations': {
+            'correct': 'Good job! You identified that the logo doesn\'t match the car. The logo shown is actually a Ferrari logo, but the car body is from a different manufacturer. Trademarks like logos help consumers identify the source of products. Using another company\'s trademark without permission is trademark infringement and can mislead consumers.',
+            'incorrect': 'Actually, there IS something wrong with this image. The logo shown is a Ferrari logo, but the car body is from a different manufacturer. This is trademark infringement because it falsely suggests that Ferrari manufactured or endorsed this vehicle. Companies invest heavily in their trademarks to build brand recognition and consumer trust, so using another company\'s trademark without permission can mislead consumers and damage the trademark owner\'s reputation.'
+          }
         }
       ],
       'digital': [
         {
-          'imageUrl': 'https://images.unsplash.com/photo-1603262110263-fb022089d50c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+          'imageUrl': 'assets/images/questions/digital_question.jpg',
           'question': 'What is wrong with this image?',
           'options': [
             'Image is fine',
             'Brand logo and device is not matching'
           ],
           'correctAnswer': 1,
-          'explanation': 'Excellent! You noticed that this Android phone has an Apple logo on it. This is a clear trademark mismatch. Apple\'s logo is a registered trademark, and placing it on a non-Apple device without permission is trademark infringement. Companies invest heavily in their brand identity, and unauthorized use of logos can confuse consumers and damage brand value.'
+          'explanations': {
+            'correct': 'Excellent! You noticed that this Android phone has an Apple logo on it. This is a clear trademark mismatch. Apple\'s logo is a registered trademark, and placing it on a non-Apple device without permission is trademark infringement. Companies invest heavily in their brand identity, and unauthorized use of logos can confuse consumers and damage brand value.',
+            'incorrect': 'This image is NOT fine! The device shown is clearly an Android phone, but it has an Apple logo on it. This is a classic example of trademark infringement. Apple\'s logo is a registered trademark that identifies Apple products. Using it on a non-Apple device falsely suggests that Apple manufactured or endorsed this product. This can confuse consumers and harm Apple\'s brand value, which is why trademark laws exist to protect both businesses and consumers.'
+          }
         }
       ],
       'films': [
         {
-          'imageUrl': 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+          'imageUrl': 'assets/images/questions/film_question.jpg',
           'question': 'What is wrong with this image?',
           'options': [
             'Image is fine',
             'Movie studio logo and film is not matching'
           ],
           'correctAnswer': 1,
-          'explanation': 'Great observation! You identified that this movie poster has a Disney logo but the film content doesn\'t match Disney\'s typical family-friendly themes. Movie studio logos are powerful trademarks that help audiences identify the source and type of content they can expect. Using another studio\'s logo without permission can mislead viewers about the film\'s origin and content, which is trademark infringement.'
+          'explanations': {
+            'correct': 'Great observation! You identified that this movie poster has a Disney logo but the film content doesn\'t match Disney\'s typical family-friendly themes. Movie studio logos are powerful trademarks that help audiences identify the source and type of content they can expect. Using another studio\'s logo without permission can mislead viewers about the film\'s origin and content, which is trademark infringement.',
+            'incorrect': 'There\'s definitely something wrong with this image! The movie poster shows content that doesn\'t match Disney\'s family-friendly brand, but it uses Disney\'s trademark logo. This is misleading to viewers who associate Disney with specific types of content. Movie studio logos are trademarks that help audiences know what to expect from a film. Using another studio\'s logo without permission falsely suggests endorsement or association, which can confuse viewers and damage the trademark owner\'s brand identity.'
+          }
         }
       ]
     };
@@ -93,7 +102,10 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
     setState(() {
       showFeedback = true;
       isCorrectAnswer = correct;
-      feedbackText = question['explanation'];
+      // Show different feedback based on whether the answer is correct or incorrect
+      feedbackText = correct 
+        ? question['explanations']['correct'] 
+        : question['explanations']['incorrect'];
       // Even darker green and red colors
       backgroundColor = correct ? const Color(0xFF388E3C) : const Color(0xFFD32F2F);
     });
@@ -168,28 +180,31 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(15),
-                  child: Image.network(
+                  child: Image.asset(
                     question['imageUrl'],
                     fit: BoxFit.cover,
-                    loadingBuilder: (context, child, loadingProgress) {
-                      if (loadingProgress == null) return child;
-                      return Center(
-                        child: CircularProgressIndicator(
-                          value: loadingProgress.expectedTotalBytes != null
-                              ? loadingProgress.cumulativeBytesLoaded /
-                                  loadingProgress.expectedTotalBytes!
-                              : null,
-                        ),
-                      );
-                    },
                     errorBuilder: (context, error, stackTrace) {
                       return Container(
                         color: Colors.grey[300],
                         child: const Center(
-                          child: Icon(
-                            Icons.broken_image,
-                            color: Colors.grey,
-                            size: 50,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.broken_image,
+                                color: Colors.grey,
+                                size: 50,
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                'Image not found\nPlace images in assets/images/questions/',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 12,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       );
@@ -223,7 +238,7 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
                           ),
                           backgroundColor: Colors.blue,
                           elevation: 5,
-                          shadowColor: Colors.blue.withOpacity(0.5),
+                          shadowColor: Colors.blue.withValues(alpha: 0.5),
                           foregroundColor: Colors.white,
                         ),
                         child: Text(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'interest_selection_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -49,7 +48,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ],
                     border: Border.all(
-                      color: Colors.white.withOpacity(0.5),
+                      color: Colors.white.withValues(alpha: 0.5),
                       width: 3,
                     ),
                   ),
