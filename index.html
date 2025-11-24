@@ -8,56 +8,132 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Intellectual Property Rights Education Game</h1>
-        <p>Learn about Patents, Trademarks, Copyrights, and Designs through interactive activities</p>
-    </header>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>IPR Master</h1>
+                <p>Learn Intellectual Property Rights</p>
+            </div>
+            <button id="home-btn" class="hidden" aria-label="Go to Home">Home</button>
+        </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="hero-section" class="hero-section" aria-label="Game selection area">
-            <div id="landing-content" class="landing-content">
-                <h2>What do you love?</h2>
-                <div class="interest-options">
-                    <div class="option-box" data-interest="cars" tabindex="0" role="button" aria-label="Select cars interest">
-                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Luxury car">
+        <main>
+            <!-- Home Screen / Level Selection -->
+            <section id="home-screen" class="screen active">
+                <h2>Select a Level</h2>
+                <div class="level-grid">
+                    <div class="level-card" data-level="1">
+                        <div class="level-icon">1</div>
+                        <h3>Fundamentals</h3>
+                        <p>Cars, Gadgets, Movies, Bikes</p>
+                    </div>
+                    <div class="level-card" data-level="2">
+                        <div class="level-icon">2</div>
+                        <h3>Mixed Challenge</h3>
+                        <p>Test your knowledge across categories</p>
+                    </div>
+                    <div class="level-card" data-level="3">
+                        <div class="level-icon">3</div>
+                        <h3>Real Stories</h3>
+                        <p>Learn from famous IP cases</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Level 1 Category Selection -->
+            <section id="category-screen" class="screen hidden">
+                <h2>Choose a Category</h2>
+                <div class="category-grid">
+                    <div class="category-card" data-category="cars">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=500&q=80" alt="Cars">
                         <span>Cars</span>
                     </div>
-                    <div class="option-box" data-interest="digital" tabindex="0" role="button" aria-label="Select digital gadgets interest">
-                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Smartphone and tablet">
-                        <span>Digital Gadgets</span>
+                    <div class="category-card" data-category="gadgets">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80" alt="Gadgets">
+                        <span>Gadgets</span>
                     </div>
-                    <div class="option-box" data-interest="films" tabindex="0" role="button" aria-label="Select films interest">
-                        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Movie theater">
-                        <span>Films</span>
+                    <div class="category-card" data-category="movies">
+                        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=500&q=80" alt="Movies">
+                        <span>Movies</span>
+                    </div>
+                    <div class="category-card" data-category="bikes">
+                        <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=500&q=80" alt="Bikes">
+                        <span>Bikes</span>
                     </div>
                 </div>
-                <div class="coming-soon">
-                    <p><em>Additional modules coming soon for Digital Gadgets and Films!</em></p>
-                </div>
-            </div>
+            </section>
 
-            <div id="question-content" class="question-content hidden" aria-hidden="true">
-                <div class="image-container">
-                    <img id="question-image" src="" alt="">
-                    <div class="blend-text">What is wrong with this image?</div>
+            <!-- Question List Screen (Level 1 & 2) -->
+            <section id="question-list-screen" class="screen hidden">
+                <h2 id="list-title">Select a Question</h2>
+                <div id="question-grid" class="question-grid">
+                    <!-- Generated by JS -->
                 </div>
-                <div class="options">
-                    <button class="option-btn" data-answer="wrong" aria-label="Option 1: Image is fine">Image is fine</button>
-                    <button class="option-btn" data-answer="correct" aria-label="Option 2: Car logo and car model is not matching">Car logo and car model is not matching</button>
-                </div>
-                <div id="feedback-text" class="feedback-text hidden" aria-live="polite"></div>
-                <div class="progress-indicator">
-                    <p>Question 1 of 1</p>
-                </div>
-            </div>
-        </section>
-    </main>
+            </section>
 
-    <footer>
-        <p>Developed for CIPAM - Intellectual Property Awareness at School Level</p>
-    </footer>
+            <!-- Question Detail Screen -->
+            <section id="question-detail-screen" class="screen hidden">
+                <div class="question-container">
+                    <div class="image-area">
+                        <img id="q-image" src="" alt="Question Image">
+                        <div class="question-overlay">
+                            <p id="q-text">Question text goes here...</p>
+                        </div>
+                    </div>
+                    <div id="q-options" class="options-area">
+                        <!-- Options generated by JS -->
+                    </div>
+                    <div id="q-feedback" class="feedback-area hidden">
+                        <div id="feedback-content"></div>
+                        <button id="next-btn" class="action-btn">Back to List</button>
+                    </div>
+                </div>
+            </section>
 
+            <!-- Level 3 Story List -->
+            <section id="story-list-screen" class="screen hidden">
+                <h2>Select a Story</h2>
+                <div id="story-grid" class="story-grid">
+                    <!-- Generated by JS -->
+                </div>
+            </section>
+
+            <!-- Level 3 Story View -->
+            <section id="story-view-screen" class="screen hidden">
+                <div class="story-container">
+                    <h2 id="story-title">Story Title</h2>
+                    <div id="story-content" class="story-text">
+                        <!-- Story text -->
+                    </div>
+                    <button id="start-story-quiz-btn" class="action-btn primary">Start Quiz</button>
+                </div>
+            </section>
+
+            <!-- Level 3 Quiz Screen -->
+            <section id="story-quiz-screen" class="screen hidden">
+                <div class="quiz-header">
+                    <span id="quiz-progress">Question 1/4</span>
+                </div>
+                <div class="question-container">
+                    <p id="sq-text" class="story-question-text">Question text...</p>
+                    <div id="sq-options" class="options-area">
+                        <!-- Options -->
+                    </div>
+                    <div id="sq-feedback" class="feedback-area hidden">
+                        <div id="sq-feedback-content"></div>
+                        <button id="sq-next-btn" class="action-btn">Next Question</button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>Developed for CIPAM - Intellectual Property Awareness</p>
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

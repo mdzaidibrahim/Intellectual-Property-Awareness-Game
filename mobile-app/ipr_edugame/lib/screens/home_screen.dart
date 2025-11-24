@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
-import 'interest_selection_screen.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import '../data/game_data.dart';
+import 'level_one_screen.dart';
+import 'question_list_screen.dart';
+import 'story_list_screen.dart';
+import '../widgets/animated_background.dart';
+import '../widgets/glass_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,93 +13,158 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: const Text('IPR EduGame'),
-        backgroundColor: Colors.blueAccent,
-        foregroundColor: Colors.white,
+        title: const Text('IPR Master'),
       ),
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Colors.blue, Colors.lightBlueAccent],
+      body: AnimatedBackground(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const SizedBox(height: 100),
+              const Text(
+                'Select a Level',
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  letterSpacing: 1.5,
+                ),
+                textAlign: TextAlign.center,
+              ).animate().fadeIn(duration: 600.ms).moveY(begin: 20, end: 0),
+              const SizedBox(height: 40),
+              _buildLevelCard(
+                context,
+                level: '1',
+                title: 'Fundamentals',
+                subtitle: 'Cars, Gadgets, Movies, Bikes',
+                icon: Icons.school_outlined,
+                color: Colors.cyanAccent,
+                delay: 200,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LevelOneScreen()),
+                  );
+                },
+              ),
+              const SizedBox(height: 20),
+              _buildLevelCard(
+                context,
+                level: '2',
+                title: 'Mixed Challenge',
+                subtitle: 'Test your knowledge across categories',
+                icon: Icons.shuffle,
+                color: Colors.purpleAccent,
+                delay: 400,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => QuestionListScreen(
+                        questions: GameData.level2,
+                        title: 'Mixed Challenge',
+                      ),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 20),
+              _buildLevelCard(
+                context,
+                level: '3',
+                title: 'Real Stories',
+                subtitle: 'Learn from famous IP cases',
+                icon: Icons.auto_stories,
+                color: Colors.amberAccent,
+                delay: 600,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const StoryListScreen()),
+                  );
+                },
+              ),
+            ],
           ),
         ),
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
+      ),
+    );
+  }
+
+  Widget _buildLevelCard(
+    BuildContext context, {
+    required String level,
+    required String title,
+    required String subtitle,
+    required IconData icon,
+    required Color color,
+    required int delay,
+    required VoidCallback onTap,
+  }) {
+    return GlassCard(
+      onTap: onTap,
+      child: Row(
+        children: [
+          Container(
+            width: 70,
+            height: 70,
+            decoration: BoxDecoration(
+              color: color.withOpacity(0.2),
+              shape: BoxShape.circle,
+              border: Border.all(color: color.withOpacity(0.5)),
+              boxShadow: [
+                BoxShadow(
+                  color: color.withOpacity(0.3),
+                  blurRadius: 15,
+                  spreadRadius: 2,
+                ),
+              ],
+            ),
+            child: Center(
+              child: Icon(
+                icon,
+                size: 32,
+                color: color,
+              ),
+            ),
+          ),
+          const SizedBox(width: 20),
+          Expanded(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'Intellectual Property Rights Education Game',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 28,
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 22,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
-                    shadows: [
-                      Shadow(
-                        offset: Offset(2, 2),
-                        blurRadius: 3,
-                        color: Colors.black26,
-                      ),
-                    ],
                   ),
                 ),
-                const SizedBox(height: 20),
-                const Text(
-                  'Learn about Patents, Trademarks, Copyrights, and Designs through interactive activities',
-                  textAlign: TextAlign.center,
+                const SizedBox(height: 5),
+                Text(
+                  subtitle,
                   style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.white,
-                  ),
-                ),
-                const SizedBox(height: 40),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const InterestSelectionScreen(),
-                      ),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 40,
-                      vertical: 20,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.blueAccent,
-                    elevation: 10,
-                  ),
-                  child: const Text(
-                    'Start Learning',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 20),
-                const Text(
-                  'Select your interest to begin!',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.white70,
+                    fontSize: 14,
+                    color: Colors.white.withOpacity(0.7),
                   ),
                 ),
               ],
             ),
           ),
-        ),
+          Icon(
+            Icons.arrow_forward_ios,
+            color: Colors.white.withOpacity(0.5),
+            size: 20,
+          ),
+        ],
       ),
-    );
+    )
+        .animate()
+        .fadeIn(delay: delay.ms, duration: 600.ms)
+        .moveX(begin: 50, end: 0, curve: Curves.easeOut);
   }
 }
