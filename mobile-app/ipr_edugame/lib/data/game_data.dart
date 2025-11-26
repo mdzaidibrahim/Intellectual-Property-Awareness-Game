@@ -73,7 +73,7 @@ class GameData {
     'cars': [
       Question(
         id: 1,
-        image: "https://images.unsplash.com/photo-1631295868223-63265b40d9e4?auto=format&fit=crop&w=800&q=80",
+        image: "assets/images/cars_q1.png",
         question: "You see an image of a Rolls-Royce Phantom, but on the front grille, instead of the Rolls-Royce “RR” emblem, the image shows a Lamborghini bull logo. Is this image showing something legally wrong, or is everything correct in this picture?",
         options: [
           Option(text: "The image has something wrong", correct: true),
@@ -87,7 +87,7 @@ class GameData {
       ),
       Question(
         id: 2,
-        image: "https://images.unsplash.com/photo-1583121274602-3e2820c698d9?auto=format&fit=crop&w=800&q=80",
+        image: "assets/images/cars_q2.png",
         question: "In this image, a Ferrari sports car is displayed, but its hood badge is replaced with the Mercedes-Benz three-pointed star. Does this image violate any trademark or branding rules, or is this image completely fine?",
         options: [
           Option(text: "Violates trademark rules", correct: true),
@@ -101,7 +101,7 @@ class GameData {
       ),
       Question(
         id: 3,
-        image: "https://images.unsplash.com/photo-1555215695-3004980adade?auto=format&fit=crop&w=800&q=80",
+        image: "assets/images/cars_q3.png",
         question: "The picture shows a BMW car with a BMW-style circular logo, but the colors inside the logo are changed to purple and yellow instead of the original blue and white. Is altering a well-known car logo like this acceptable, or is something wrong here?",
         options: [
           Option(text: "Something is wrong here", correct: true),
@@ -115,7 +115,7 @@ class GameData {
       ),
       Question(
         id: 4,
-        image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80",
+        image: "assets/images/cars_q4.png",
         question: "This image shows a Toyota car with the Honda “H” badge placed on the front. Everything else in the picture appears normal. Does using a different company’s badge on another brand’s car count as a problem, or is this picture alright?",
         options: [
           Option(text: "It is a problem", correct: true),
@@ -243,7 +243,7 @@ class GameData {
       ),
       Question(
         id: 3,
-        image: "https://images.unsplash.com/photo-1591638246754-184e819e59a8?auto=format&fit=crop&w=800&q=80",
+        image: "assets/images/bike_q3.png",
         question: "A Hero Splendor is shown with its original and accurate Hero badge on the tank. No distortions or mismatches. Is anything wrong here?",
         options: [
           Option(text: "Wrong", correct: false),
@@ -257,7 +257,7 @@ class GameData {
       ),
       Question(
         id: 4,
-        image: "https://images.unsplash.com/photo-1547549644-592b53da03a1?auto=format&fit=crop&w=800&q=80",
+        image: "assets/images/bike_q4.png",
         question: "You see a Yamaha bike, but the logo printed on the tank is misspelled as “Yamhaa.” Is this image legally wrong?",
         options: [
           Option(text: "Wrong", correct: true),
@@ -271,7 +271,7 @@ class GameData {
       ),
       Question(
         id: 5,
-        image: "https://images.unsplash.com/photo-1615172282427-9a5752d64b57?auto=format&fit=crop&w=800&q=80",
+        image: "assets/images/bike_q5.png",
         question: "A Ducati Panigale is shown painted in Kawasaki’s signature green color with Kawasaki’s “K” logo. Is this image correct or wrong?",
         options: [
           Option(text: "Wrong", correct: true),
@@ -313,7 +313,7 @@ class GameData {
       ),
       Question(
         id: 8,
-        image: "https://images.unsplash.com/photo-1598209279122-8541213a0383?auto=format&fit=crop&w=800&q=80",
+        image: "assets/images/mixed_q8.png",
         question: "The picture shows a Triumph motorcycle, but the Triumph wordmark is stretched vertically, distorting the official logo. Is this image acceptable?",
         options: [
           Option(text: "Wrong", correct: true),
@@ -357,7 +357,7 @@ class GameData {
     'movies': [
       Question(
         id: 1,
-        image: "https://images.unsplash.com/photo-1635805737707-575885ab0820?auto=format&fit=crop&w=800&q=80",
+        image: "assets/images/movie_q1.png",
         question: "The image shows Spider-Man in his usual suit, but the chest symbol is replaced with Batman’s bat-emblem. Is this image legally wrong, or is everything alright?",
         options: [
           Option(text: "The image has something wrong", correct: true),
@@ -371,7 +371,7 @@ class GameData {
       ),
       Question(
         id: 2,
-        image: "https://images.unsplash.com/photo-1598153346810-860daa814c4b?auto=format&fit=crop&w=800&q=80",
+        image: "assets/images/movie_q2.png",
         question: "The image shows a Harry Potter character holding a wand, but the wand packaging has the “Star Wars Lightsaber” branding and logo. Is this correct or wrong?",
         options: [
           Option(text: "Wrong", correct: true),
@@ -399,7 +399,7 @@ class GameData {
       ),
       Question(
         id: 4,
-        image: "https://images.unsplash.com/photo-1624974958318-19265143d15d?auto=format&fit=crop&w=800&q=80",
+        image: "assets/images/movie_q4.png",
         question: "The image shows Mickey Mouse, but he has been redrawn to look exactly like a Minion, including Minion goggles and yellow body. Is this image wrong or okay?",
         options: [
           Option(text: "Wrong", correct: true),
@@ -413,7 +413,7 @@ class GameData {
       ),
       Question(
         id: 5,
-        image: "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?auto=format&fit=crop&w=800&q=80",
+        image: "assets/images/movie_q5.png",
         question: "The picture shows a Toy Story poster, but the Pixar logo in the corner is spelled “Pixor.” Is this acceptable or not?",
         options: [
           Option(text: "Wrong", correct: true),
@@ -441,7 +441,7 @@ class GameData {
       ),
       Question(
         id: 7,
-        image: "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?auto=format&fit=crop&w=800&q=80",
+        image: "assets/images/movie_q7.png",
         question: "A Minions poster is shown with the correct Illumination logo and character designs unchanged. Is anything wrong here?",
         options: [
           Option(text: "Wrong", correct: false),
@@ -469,7 +469,7 @@ class GameData {
       ),
       Question(
         id: 9,
-        image: "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?auto=format&fit=crop&w=800&q=80",
+        image: "assets/images/movie_q9.png",
         question: "In this image, the Pixar lamp in the logo is flipped upside down. The rest of the poster is correct. Is this legal or not?",
         options: [
           Option(text: "Wrong", correct: true),
@@ -499,7 +499,7 @@ class GameData {
     'gadgets': [
       Question(
         id: 1,
-        image: "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?auto=format&fit=crop&w=800&q=80",
+        image: "assets/images/gadget_q1.png",
         question: "The image shows a Samsung smartphone, but on the back panel it has the Apple bitten-apple logo instead of Samsung branding. Is this image showing something wrong, or is it fine?",
         options: [
           Option(text: "The image has something wrong", correct: true),
@@ -541,7 +541,7 @@ class GameData {
       ),
       Question(
         id: 4,
-        image: "https://images.unsplash.com/photo-1588156979435-379b9d802b74?auto=format&fit=crop&w=800&q=80",
+        image: "assets/images/gadget_q4.png",
         question: "An AirPods case is shown, but the logo printed on the front is the Beats “b” symbol instead of Apple’s AirPods branding. Is this image okay or wrong?",
         options: [
           Option(text: "Wrong", correct: true),
@@ -555,7 +555,7 @@ class GameData {
       ),
       Question(
         id: 5,
-        image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca4?auto=format&fit=crop&w=800&q=80",
+        image: "assets/images/gadget_q5.png",
         question: "The image shows a MacBook laptop, but instead of the Apple logo, the back has a Windows four-square logo. Is this right or wrong?",
         options: [
           Option(text: "Wrong", correct: true),
@@ -569,7 +569,7 @@ class GameData {
       ),
       Question(
         id: 6,
-        image: "https://images.unsplash.com/photo-1593642632823-8f78536788c6?auto=format&fit=crop&w=800&q=80",
+        image: "assets/images/gadget_q6.png",
         question: "A laptop is shown with a sticker that imitates Intel’s “Intel Inside” logo but is misspelled as “Intal Inside.” Is this acceptable?",
         options: [
           Option(text: "Wrong", correct: true),
@@ -597,7 +597,7 @@ class GameData {
       ),
       Question(
         id: 8,
-        image: "https://images.unsplash.com/photo-1598327105666-5b89351aff23?auto=format&fit=crop&w=800&q=80",
+        image: "assets/images/gadget_q8.png",
         question: "The image shows a Google Pixel phone, but the “G” logo is stretched vertically, altering its shape. Is this legal or not?",
         options: [
           Option(text: "Wrong", correct: true),
@@ -611,7 +611,7 @@ class GameData {
       ),
       Question(
         id: 9,
-        image: "https://images.unsplash.com/photo-1543512214-318c77a07306?auto=format&fit=crop&w=800&q=80",
+        image: "assets/images/mixed_q7.png",
         question: "A JBL Bluetooth speaker is shown, but it has the Sony wordmark printed on it. Is the image right?",
         options: [
           Option(text: "Wrong", correct: true),
@@ -638,115 +638,6 @@ class GameData {
         ),
       ),
     ],
-  };
-
-  static final List<Question> level2 = [
-    Question(
-      id: 1,
-      image: "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?auto=format&fit=crop&w=800&q=80",
-      question: "The image shows a Samsung smartphone, but the back panel has the OnePlus “1+” logo instead of Samsung’s branding. Is this correct or wrong?",
-      options: [
-        Option(text: "Wrong", correct: true),
-        Option(text: "Alright", correct: false),
-      ],
-      explanation: Explanation(
-        correct: "You can’t place one company’s trademark on another company’s device. This misleads users and violates brand rights.",
-        wrong: "Thinking it’s fine ignores that trademarks represent the company identity and cannot be swapped.",
-        learning: "Brand logos must match the actual manufacturer.",
-      ),
-    ),
-    Question(
-      id: 2,
-      image: "https://images.unsplash.com/photo-1635805737707-575885ab0820?auto=format&fit=crop&w=800&q=80",
-      question: "A Spider-Man movie poster is shown, but at the bottom, instead of the Marvel logo, it displays the “DC Studios” logo. Is this acceptable?",
-      options: [
-        Option(text: "Wrong", correct: true),
-        Option(text: "Alright", correct: false),
-      ],
-      explanation: Explanation(
-        correct: "Spider-Man belongs to Marvel. Using DC’s logo misrepresents ownership and violates trademark and copyright rules.",
-        wrong: "Believing this is okay ignores how strictly studios protect their branding.",
-        learning: "Movie posters must show the correct studio logo.",
-      ),
-    ),
-    Question(
-      id: 3,
-      image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=800&q=80",
-      question: "A Honda CB Shine is shown with the correct Honda Wing logo placed properly on the tank. Is something wrong here?",
-      options: [
-        Option(text: "Wrong", correct: false),
-        Option(text: "Alright", correct: true),
-      ],
-      explanation: Explanation(
-        correct: "Everything matches the brand’s official styling—no misuse at all.",
-        wrong: "Calling it wrong would show confusion about proper branding.",
-        learning: "If the logo is original and used correctly, it is legal.",
-      ),
-    ),
-    Question(
-      id: 4,
-      image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca4?auto=format&fit=crop&w=800&q=80",
-      question: "A laptop is shown with a logo that looks like Apple’s bitten-apple but spelled “Applee” beneath it. Is this image wrong or right?",
-      options: [
-        Option(text: "Wrong", correct: true),
-        Option(text: "Alright", correct: false),
-      ],
-      explanation: Explanation(
-        correct: "Misspellings and imitations are counterfeit. They confuse customers and violate trademark law.",
-        wrong: "It may look similar, but altered spellings still infringe trademark rights.",
-        learning: "Trademarks protect exact names and shapes—small changes don’t make them legal.",
-      ),
-    ),
-    Question(
-      id: 5,
-      image: "https://images.unsplash.com/photo-1635805737707-575885ab0820?auto=format&fit=crop&w=800&q=80",
-      question: "A Batman mask toy is shown inside packaging printed with the Marvel logo instead of DC branding. Is this image correct?",
-      options: [
-        Option(text: "Wrong", correct: true),
-        Option(text: "Alright", correct: false),
-      ],
-      explanation: Explanation(
-        correct: "Batman is a DC character. Using Marvel branding misrepresents the IP owner.",
-        wrong: "Believing it’s okay ignores ownership boundaries between studios.",
-        learning: "Characters must always be paired with the correct franchise branding.",
-      ),
-    ),
-    Question(
-      id: 6,
-      image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80",
-      question: "An advertisement for a Hyundai car uses the slogan “The Ultimate Driving Machine,” which is BMW’s famous trademarked slogan. Is this acceptable or not?",
-      options: [
-        Option(text: "Wrong", correct: true),
-        Option(text: "Alright", correct: false),
-      ],
-      explanation: Explanation(
-        correct: "Slogans are trademarked just like logos. Using another brand’s slogan without permission is infringement.",
-        wrong: "Thinking it’s okay ignores that slogans are exclusive to brands.",
-        learning: "Slogans are legally protected branding assets.",
-      ),
-    ),
-    Question(
-      id: 7,
-      image: "https://images.unsplash.com/photo-1543512214-318c77a07306?auto=format&fit=crop&w=800&q=80",
-      question: "A pair of JBL earbuds shows the correct orange JBL logo and proper branding. Is anything wrong here?",
-      options: [
-        Option(text: "Wrong", correct: false),
-        Option(text: "Alright", correct: true),
-      ],
-      explanation: Explanation(
-        correct: "Branding is authentic and unchanged—no issue.",
-        wrong: "There is no misuse when branding matches the trademark.",
-        learning: "Correct use of a brand’s own logo is always valid.",
-      ),
-    ),
-    Question(
-      id: 8,
-      image: "https://images.unsplash.com/photo-1598209279122-8541213a0383?auto=format&fit=crop&w=800&q=80",
-      question: "A Triumph motorcycle is displayed, but the bike tank shows the Yamaha “tuning forks” logo. Is this correct or wrong?",
-      options: [
-        Option(text: "Wrong", correct: true),
-        Option(text: "Alright", correct: false),
-      ],
       explanation: Explanation(
         correct: "Two motorcycle brands cannot share or interchange logos. This is clear trademark misuse.",
         wrong: "Assuming it’s okay ignores that logos identify specific manufacturers.",
