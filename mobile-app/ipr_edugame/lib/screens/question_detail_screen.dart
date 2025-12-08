@@ -36,6 +36,24 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(
+              height: 250,
+              decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(16),
+                image: DecorationImage(
+                  image: widget.question.image.startsWith('http')
+                      ? NetworkImage(widget.question.image)
+                      : AssetImage(widget.question.image) as ImageProvider,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            Text(
+              widget.question.question,
+              style: const TextStyle(
                 fontSize: 18,
                 color: Colors.white,
                 height: 1.5,

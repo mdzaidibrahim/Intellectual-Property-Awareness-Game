@@ -638,6 +638,115 @@ class GameData {
         ),
       ),
     ],
+  };
+
+  static final List<Question> level2 = [
+    Question(
+      id: 1,
+      image: "assets/images/mixed_q1.png",
+      question: "The image shows a Samsung smartphone, but the back panel has the OnePlus “1+” logo instead of Samsung’s branding. Is this correct or wrong?",
+      options: [
+        Option(text: "Wrong", correct: true),
+        Option(text: "Alright", correct: false),
+      ],
+      explanation: Explanation(
+        correct: "You can’t place one company’s trademark on another company’s device. This misleads users and violates brand rights.",
+        wrong: "Thinking it’s fine ignores that trademarks represent the company identity and cannot be swapped.",
+        learning: "Brand logos must match the actual manufacturer.",
+      ),
+    ),
+    Question(
+      id: 2,
+      image: "assets/images/movie_q1.png",
+      question: "A Spider-Man movie poster is shown, but at the bottom, instead of the Marvel logo, it displays the “DC Studios” logo. Is this acceptable?",
+      options: [
+        Option(text: "Wrong", correct: true),
+        Option(text: "Alright", correct: false),
+      ],
+      explanation: Explanation(
+        correct: "Spider-Man belongs to Marvel. Using DC’s logo misrepresents ownership and violates trademark and copyright rules.",
+        wrong: "Believing this is okay ignores how strictly studios protect their branding.",
+        learning: "Movie posters must show the correct studio logo.",
+      ),
+    ),
+    Question(
+      id: 3,
+      image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=800&q=80",
+      question: "A Honda CB Shine is shown with the correct Honda Wing logo placed properly on the tank. Is something wrong here?",
+      options: [
+        Option(text: "Wrong", correct: false),
+        Option(text: "Alright", correct: true),
+      ],
+      explanation: Explanation(
+        correct: "Everything matches the brand’s official styling—no misuse at all.",
+        wrong: "Calling it wrong would show confusion about proper branding.",
+        learning: "If the logo is original and used correctly, it is legal.",
+      ),
+    ),
+    Question(
+      id: 4,
+      image: "assets/images/mixed_q4.png",
+      question: "A laptop is shown with a logo that looks like Apple’s bitten-apple but spelled “Applee” beneath it. Is this image wrong or right?",
+      options: [
+        Option(text: "Wrong", correct: true),
+        Option(text: "Alright", correct: false),
+      ],
+      explanation: Explanation(
+        correct: "Misspellings and imitations are counterfeit. They confuse customers and violate trademark law.",
+        wrong: "It may look similar, but altered spellings still infringe trademark rights.",
+        learning: "Trademarks protect exact names and shapes—small changes don’t make them legal.",
+      ),
+    ),
+    Question(
+      id: 5,
+      image: "assets/images/movie_q1.png",
+      question: "A Batman mask toy is shown inside packaging printed with the Marvel logo instead of DC branding. Is this image correct?",
+      options: [
+        Option(text: "Wrong", correct: true),
+        Option(text: "Alright", correct: false),
+      ],
+      explanation: Explanation(
+        correct: "Batman is a DC character. Using Marvel branding misrepresents the IP owner.",
+        wrong: "Believing it’s okay ignores ownership boundaries between studios.",
+        learning: "Characters must always be paired with the correct franchise branding.",
+      ),
+    ),
+    Question(
+      id: 6,
+      image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80",
+      question: "An advertisement for a Hyundai car uses the slogan “The Ultimate Driving Machine,” which is BMW’s famous trademarked slogan. Is this acceptable or not?",
+      options: [
+        Option(text: "Wrong", correct: true),
+        Option(text: "Alright", correct: false),
+      ],
+      explanation: Explanation(
+        correct: "Slogans are trademarked just like logos. Using another brand’s slogan without permission is infringement.",
+        wrong: "Thinking it’s okay ignores that slogans are exclusive to brands.",
+        learning: "Slogans are legally protected branding assets.",
+      ),
+    ),
+    Question(
+      id: 7,
+      image: "assets/images/mixed_q7.png",
+      question: "A pair of JBL earbuds shows the correct orange JBL logo and proper branding. Is anything wrong here?",
+      options: [
+        Option(text: "Wrong", correct: false),
+        Option(text: "Alright", correct: true),
+      ],
+      explanation: Explanation(
+        correct: "Branding is authentic and unchanged—no issue.",
+        wrong: "There is no misuse when branding matches the trademark.",
+        learning: "Correct use of a brand’s own logo is always valid.",
+      ),
+    ),
+    Question(
+      id: 8,
+      image: "assets/images/mixed_q8.png",
+      question: "A Triumph motorcycle is displayed, but the bike tank shows the Yamaha “tuning forks” logo. Is this correct or wrong?",
+      options: [
+        Option(text: "Wrong", correct: true),
+        Option(text: "Alright", correct: false),
+      ],
       explanation: Explanation(
         correct: "Two motorcycle brands cannot share or interchange logos. This is clear trademark misuse.",
         wrong: "Assuming it’s okay ignores that logos identify specific manufacturers.",
